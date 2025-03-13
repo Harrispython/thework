@@ -1,0 +1,30 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+*.pidb
+*.pdb
+*.mdb
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.uo
+
+# Unity build results
+*.apk
+*.aab
+*.ipa
+
+# Rider project files
+.idea/
+*.sln.iml
+Assets/MoonBika/Assets/ADD/SFX/Bamboo Wind.flac
