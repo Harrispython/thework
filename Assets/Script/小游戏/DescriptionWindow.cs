@@ -26,7 +26,7 @@ public class DescriptionWindow : MonoBehaviour
     public void SetWindow(ItemMessage Message)
     {
         this.transform.Find("Ãû×Ö").GetComponent<TextMeshProUGUI>().text = $"Ãû×Ö:{Message.message.ItemName}";
-        this.transform.Find("½éÉÜ").GetComponent<TextMeshProUGUI>().text = $"½éÉÜ:{Message.message.Description}";
+        
     }
 
 
