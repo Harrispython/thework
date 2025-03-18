@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/小游戏/SliderContorler.cs.meta
 guid: a1efcca93d5b5544f8f9a5b989fe5b78
+========
+guid: cc64404c76897d246a3189dc8c2f7d66
+>>>>>>>> 7dbd002af0d1d0a32f0152a27809ca6ab7df5677:Assets/Scripts/小游戏/DescriptionWindow.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

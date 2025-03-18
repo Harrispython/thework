@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta
 guid: e944529dcaee98f4e9498d80e541d93e
 timeCreated: 1602593330
 licenseType: Store
+========
+guid: 1fee33518c65d8a4192378c85efb115a
+>>>>>>>> 7dbd002af0d1d0a32f0152a27809ca6ab7df5677:Assets/Scripts/小游戏/ItemMessage.cs.meta
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
