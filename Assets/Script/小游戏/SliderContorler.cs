@@ -1,21 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using TMPro;
+using DG.Tweening;
+using System;
 
 public class SliderContorler : MonoBehaviour
 {
+    public static SliderContorler instance;
     public Slider slider;
-    public float itemHeight;//物体重量
-    public float itemLenght;//物体力臂
-    public float Coefficient;//倾斜系数
-    public float Differencevalue;//差值
+    public float itemHeight; // 物体重量
+    public string itemName; // 物体名字
+    public float itemLenght; // 物体力臂
+    public Image itemImage;
+    public float Coefficient; // 倾斜系数
+    public float Differencevalue; // 差值
     public float minHeight;
 
-    public TextMeshProUGUI DisplayScale;//显示刻度
+    public TextMeshProUGUI DisplayScale; // 显示刻度
 
+    public Action<ItemMessage> OnItemSet; // 事件委托
+
+    private void Start()
+    {
+        // 订阅事件
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        OnItemSet += SetItem;
+    }
 
     public void SetSliderRoation()
     {
@@ -34,4 +51,12 @@ public class SliderContorler : MonoBehaviour
         Debug.Log("enter Or Exit");
     }
 
+    public void SetItem(ItemMessage itemMessage)
+    {
+        itemHeight = itemMessage.message.ItemHeight;
+        itemImage.sprite = itemMessage.message.sprite;
+        itemImage.gameObject.SetActive(true);
+        itemName = itemMessage.message.ItemName;
+        SetSliderRoation();
+    }
 }

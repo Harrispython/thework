@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1152570258437982089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8344421333023094479}
+  - component: {fileID: 1912632077685475434}
+  - component: {fileID: 2384122907074281412}
+  m_Layer: 5
+  m_Name: Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8344421333023094479
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152570258437982089}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 345464600739829611}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00010681152, y: -38.3002}
+  m_SizeDelta: {x: 50.2782, y: 50.2782}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1912632077685475434
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152570258437982089}
+  m_CullTransparentMesh: 1
+--- !u!114 &2384122907074281412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152570258437982089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.42352942}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1391188127165650008
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,12 +342,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4170245915574873197}
+  m_Children:
+  - {fileID: 8344421333023094479}
+  m_Father: {fileID: 3569258563214396942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 142.64613, y: 2.2586155}
+  m_AnchoredPosition: {x: 173.5591, y: -0.041381836}
   m_SizeDelta: {x: 102, y: 172}
   m_Pivot: {x: 0.53084505, y: 0.9805723}
 --- !u!222 &6180324451656844252
@@ -344,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7980086012130930067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -361,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000071526, y: 63.4}
+  m_AnchoredPosition: {x: -0.00000047683716, y: 63.4}
   m_SizeDelta: {x: 186.7355, y: 28.2594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2730358153568063679
@@ -605,7 +681,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3569258563214396942}
-  - {fileID: 345464600739829611}
   - {fileID: 5010158446038645503}
   m_Father: {fileID: 7998139239230513105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -666,11 +741,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 6655712801122148136}
   itemHeight: 5
+  itemName: 
   itemLenght: 1
+  itemImage: {fileID: 0}
   Coefficient: 0
   Differencevalue: 0
   minHeight: 1
-  DisplayScale: {fileID: 0}
+  DisplayScale: {fileID: 6056336033276698287}
 --- !u!1 &6451643537223725495
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +892,7 @@ RectTransform:
   - {fileID: 3287301010438987048}
   - {fileID: 3387242199931828563}
   - {fileID: 3993267077072006742}
+  - {fileID: 345464600739829611}
   m_Father: {fileID: 4170245915574873197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -889,7 +967,19 @@ MonoBehaviour:
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 5385286387049854298}
+          m_TargetAssemblyTypeName: SliderContorler, Assembly-CSharp
+          m_MethodName: enableScale
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 14
     callback:
       m_PersistentCalls:
@@ -897,6 +987,38 @@ MonoBehaviour:
         - m_Target: {fileID: 5385286387049854298}
           m_TargetAssemblyTypeName: SliderContorler, Assembly-CSharp
           m_MethodName: SetSliderRoation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5385286387049854298}
+          m_TargetAssemblyTypeName: SliderContorler, Assembly-CSharp
+          m_MethodName: enableScale
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5385286387049854298}
+          m_TargetAssemblyTypeName: SliderContorler, Assembly-CSharp
+          m_MethodName: SetScale
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
