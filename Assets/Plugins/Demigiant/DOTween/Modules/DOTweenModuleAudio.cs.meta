@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta
 guid: b766d08851589514b97afb23c6f30a70
+========
+guid: 2650d36b332092b40898436c9be857eb
+>>>>>>>> 7dbd002af0d1d0a32f0152a27809ca6ab7df5677:Assets/Scripts/小游戏/Sethandle.cs.meta
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
