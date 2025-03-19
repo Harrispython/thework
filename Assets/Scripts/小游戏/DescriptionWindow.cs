@@ -10,6 +10,8 @@ public class DescriptionWindow : MonoBehaviour
 
     public Action<ItemMessage> OnWindowSet; // 事件委托
     public static DescriptionWindow instance;
+    public ItemMessage message;
+
     private void Start()
     {
         // 订阅事件
@@ -25,8 +27,10 @@ public class DescriptionWindow : MonoBehaviour
     }
     public void SetWindow(ItemMessage Message)
     {
+        message = Message;
         this.transform.Find("名字").GetComponent<TextMeshProUGUI>().text = $"名字:{Message.message.ItemName}";
-        this.transform.Find("介绍").GetComponent<TextMeshProUGUI>().text = $"介绍:{Message.message.Description}";
+        this.transform.Find("重量").GetChild(0).GetComponent<TMP_InputField>().text = "";
+        
     }
 
 
