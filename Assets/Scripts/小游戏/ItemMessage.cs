@@ -19,5 +19,6 @@ public class ItemMessage : MonoBehaviour
     {
         SliderContorler.instance.OnItemSet?.Invoke(this);
         DescriptionWindow.instance.OnWindowSet?.Invoke(this);
+        Destroy(gameObject);
     }
 }

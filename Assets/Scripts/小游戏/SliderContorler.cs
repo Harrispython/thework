@@ -53,6 +53,15 @@ public class SliderContorler : MonoBehaviour
 
     public void SetItem(ItemMessage itemMessage)
     {
+        if (itemMessage == null)
+        {
+            itemHeight= 0;
+            itemImage.sprite= null;
+            itemImage.gameObject.SetActive(false);
+            itemName = null;
+            SetSliderRoation();
+            return;
+        }
         itemHeight = itemMessage.message.ItemHeight;
         itemImage.sprite = itemMessage.message.sprite;
         itemImage.gameObject.SetActive(true);
