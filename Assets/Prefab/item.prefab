@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6403340170671865562}
   - component: {fileID: 5879608284176485136}
   - component: {fileID: 5185762818532411892}
-  - component: {fileID: 6671344702140815092}
   - component: {fileID: 4118684793766515655}
+  - component: {fileID: 517639760233861712}
   m_Layer: 5
   m_Name: item
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
+  m_Sprite: {fileID: -476559388, guid: 485062e134908b445b9eb6b5d63ae713, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -77,21 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6671344702140815092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6766603863177752911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fee33518c65d8a4192378c85efb115a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemHeight: 8
-  ItemName: 1111
-  sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
 --- !u!114 &4118684793766515655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6671344702140815092}
+      - m_Target: {fileID: 517639760233861712}
         m_TargetAssemblyTypeName: ItemMessage, Assembly-CSharp
         m_MethodName: SetItemToSlider
         m_Mode: 1
@@ -148,3 +133,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &517639760233861712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766603863177752911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c6aa213ab56e54e8ef0138ce98127a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message:
+    ItemHeight: 8
+    ItemName: aaa
+    sprite: {fileID: 21300000, guid: ea8f56c43254d41728f5ac4e8299b6c9, type: 3}
+    Description: 
