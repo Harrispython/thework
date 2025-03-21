@@ -33,6 +33,12 @@ public class Npc : MonoBehaviour
         }
     }
 
+    
+    // 新增方法，用于设置NpcName
+    public void SetNpcName(string newName)
+    {
+        NpcName = newName; // 设置新的NPC名称
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

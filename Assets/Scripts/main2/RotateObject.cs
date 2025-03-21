@@ -6,7 +6,7 @@ public class RotateObject : MonoBehaviour
 {
     // 旋转速度（每秒旋转的角度）
     [SerializeField] private float rotationSpeed = 50f;
-
+    
     void Update()
     {
         // 使用Transform.Rotate方法使物体绕z轴旋转
