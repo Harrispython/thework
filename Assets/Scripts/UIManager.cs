@@ -4,7 +4,8 @@ public class UIManager : MonoBehaviour
 {
     // 单例实例
     private static UIManager instance;
-    
+    GameObject canvasPrefab;
+
     // 全局访问点
     public static UIManager Instance
     {
@@ -14,7 +15,7 @@ public class UIManager : MonoBehaviour
             {
                 // 在场景中查找UIManager实例
                 instance = FindObjectOfType<UIManager>();
-                
+
                 // 如果场景中没有，创建一个新的
                 if (instance == null)
                 {
@@ -33,8 +34,8 @@ public class UIManager : MonoBehaviour
     public bool IsUIVisible
     {
         get { return isUIVisible; }
-        set 
-        { 
+        set
+        {
             isUIVisible = value;
             Cursor.lockState = isUIVisible ? CursorLockMode.None : CursorLockMode.Locked;
             // 这里可以添加UI显示状态改变时的其他逻辑
@@ -54,4 +55,50 @@ public class UIManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
-} 
+
+    // 负责根据名字搜索并实例化Canvas预制体
+    public void SpawnCanvas(string prefabName)
+    {
+        // 检查场景中是否已存在同名的 Canvas
+        Canvas[] existingCanvases = FindObjectsOfType<Canvas>();
+        foreach (Canvas canvas in existingCanvases)
+        {
+            if (canvas.gameObject.name == prefabName)
+            {
+                Debug.Log($"场景中已存在名为 '{prefabName}' 的 Canvas，不再创建新实例。");
+                return;
+            }
+        }
+        existingCanvases = null;
+        canvasPrefab = Resources.Load<GameObject>("Prefab/" + prefabName);
+        if (canvasPrefab == null)
+        {
+            Debug.LogError($"Canvas 预制体 '{prefabName}' 未找到！");
+            return;
+        }
+
+        Instantiate(canvasPrefab).name = prefabName;
+        Debug.Log($"Canvas 预制体 '{prefabName}' 已成功生成。");
+    }
+    public void ActivateCavansObject(string ObjecetName)
+    {
+        UIControler TempUI= canvasPrefab.GetComponent<UIControler>();
+        if (TempUI)
+        {
+
+            TempUI.SetChildActive(ObjecetName,true);
+        }
+    }
+    public void DisactiveCavansObject(string ObjecetName)
+    {
+
+        UIControler TempUI = canvasPrefab.GetComponent<UIControler>();
+        if (TempUI)
+        {
+            TempUI.SetChildActive(ObjecetName, false);
+        }
+    }
+
+
+
+}
