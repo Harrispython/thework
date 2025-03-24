@@ -6,6 +6,7 @@ public class gameobjectenable : MonoBehaviour
 {
     [SerializeField] private GameObject targetObject ;
 
+
     public void Enable()
     {
         targetObject.gameObject.SetActive(true);
