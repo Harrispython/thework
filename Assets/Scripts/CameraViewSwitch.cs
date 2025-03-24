@@ -39,7 +39,6 @@ public class CameraViewSwitch : MonoBehaviour
     
     private System.Collections.IEnumerator waitSecond()
     {
-        // 等待十秒
         yield return new WaitForSeconds(1f);
         isFirstPerson = !isFirstPerson;
         GetComponent<gameobjectenable>().enableStart();
@@ -75,6 +74,8 @@ public class CameraViewSwitch : MonoBehaviour
             {
                 characterModel.SetActive(true);
             }
+            StartCoroutine(waitSecond());
+
         }
     }
 
