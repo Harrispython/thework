@@ -198,7 +198,7 @@ TextureImporter:
         width: 74
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,6 +206,50 @@ TextureImporter:
       bones: []
       spriteID: 8fc12b93289629e4ba4b4fafefc9260c
       internalID: -44783653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6
+        (16)_\u7231\u7ED9\u7F51_aigei_com_4"
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 343
+        width: 184
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb9b356459453b47a9bf5680a80d8bd
+      internalID: -1927998887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6
+        (16)_\u7231\u7ED9\u7F51_aigei_com_5"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 143
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33778b988b3f8445ab86bc3c7d266fe
+      internalID: -481318825
       vertices: []
       indices: 
       edges: []
@@ -225,6 +269,8 @@ TextureImporter:
       "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6 (16)_\u7231\u7ED9\u7F51_aigei_com_1": -293239600
       "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6 (16)_\u7231\u7ED9\u7F51_aigei_com_2": -1071178867
       "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6 (16)_\u7231\u7ED9\u7F51_aigei_com_3": -44783653
+      "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6 (16)_\u7231\u7ED9\u7F51_aigei_com_4": -1927998887
+      "\u56FD\u98CE \u6C34\u58A8 \u6E38\u620F\u754C\u9762UI\u7D20\u6750\u56FE\u96C6 (16)_\u7231\u7ED9\u7F51_aigei_com_5": -481318825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
