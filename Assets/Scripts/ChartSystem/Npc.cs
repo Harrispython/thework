@@ -43,7 +43,10 @@ public class Npc : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canChart = true;
+            if (NpcName != "0")//判断是否为npc角色，0为不可对话物体
+            {
+                canChart = true;
+            }
             targetAlpha = 1f; // 设置目标透明度为完全显示
             StartAllFades(); // 开始所有UI的渐变显示
         }
@@ -53,7 +56,10 @@ public class Npc : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canChart = false;
+            if (NpcName != "0")
+            {
+                canChart = false;
+            }
             targetAlpha = 0f; // 设置目标透明度为完全隐藏
             StartAllFades(); // 开始所有UI的渐变隐藏
         }
@@ -83,7 +89,7 @@ public class Npc : MonoBehaviour
                 if (ui != null)
                 {
                     Coroutine newCoroutine = StartCoroutine(FadePromptUI(ui));
-                    fadeCoroutines.Add(newCoroutine);
+                    this.fadeCoroutines.Add(newCoroutine);
                 }
             }
         }
@@ -112,6 +118,7 @@ public class Npc : MonoBehaviour
             Flowchart flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
             if (flowchart.HasBlock(NpcName))
             {
+                canChart = false;
                 flowchart.ExecuteBlock(NpcName); // 播放对话
             }
         }

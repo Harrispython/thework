@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cubemat
-  m_Shader: {fileID: -6465566751694194690, guid: 9ec943c67a970a34d963c38a65b8c2bd,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9ec943c67a970a34d963c38a65b8c2bd, type: 3}
   m_Parent: {fileID: 2100000, guid: 229d11affc3b0ff40806189a6650998a, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -30,9 +29,8 @@ Material:
     - _Fill: -2
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.13207549, g: 0.12833749, b: 0.12833749, a: 1}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &4413637480349500941
 MonoBehaviour:
   m_ObjectHideFlags: 11
