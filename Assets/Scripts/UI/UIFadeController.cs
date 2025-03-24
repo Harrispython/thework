@@ -20,6 +20,10 @@ public class UIFadeController : MonoBehaviour
     private float currentAlpha = 1f;
     private float targetAlpha = 1f;
     private float currentTime = 0f;
+    
+    [Header("是否重复")]
+    public bool repeat=false;//判断是否需要重复
+    private bool isrepeat=false;//判断是否需要重复
 
     void Start()
     {
@@ -33,10 +37,8 @@ public class UIFadeController : MonoBehaviour
         // 设置初始状态
         isVisible = startVisible;
         currentAlpha = startVisible ? 1f : 0f;
-        print(currentAlpha);
         targetAlpha = currentAlpha;
         canvasGroup.alpha = currentAlpha;
-        ToggleVisibility();
     }
 
     void Update()
@@ -44,7 +46,10 @@ public class UIFadeController : MonoBehaviour
         // 检测按键输入
         if (Input.GetKeyDown(fadeKey))
         {
-            ToggleVisibility();
+            if (!isrepeat)
+            {
+                ToggleVisibility();
+            }
         }
 
         // 处理渐变动画
@@ -72,6 +77,12 @@ public class UIFadeController : MonoBehaviour
     // 切换可见性
     public void ToggleVisibility()
     {
+        if (!repeat)
+        {
+            FadeIn();
+            isrepeat = true;
+            return;
+        } 
         if (isVisible)
         {
             FadeOut();
