@@ -79,7 +79,7 @@ public class UIFadeController : MonoBehaviour
     {
         if (!repeat)
         {
-            FadeIn();
+            FadeOut();
             isrepeat = true;
             return;
         } 
