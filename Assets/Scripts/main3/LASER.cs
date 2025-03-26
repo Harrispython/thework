@@ -31,7 +31,8 @@ namespace MoonBika
         
         private bool isHittingPoint = false;// 是否正在击中point标签
         private float hitTimer = 0f;        // 计时器
-        private float hitDuration = 0.5f;   // 需要持续击中的时间
+        private float hitDuration = 1f;   // 需要持续击中的时间
+        private bool ishited = false;//是否启用过
         
         private LaserStop laserStop; // LaserStop脚本引用
 
@@ -154,11 +155,13 @@ namespace MoonBika
                     hitTimer += Time.deltaTime;
                     print(hitTimer);
                     // 检查是否达到持续时间
-                    if (hitTimer >= hitDuration)
+                    if (hitTimer >= hitDuration&&!ishited)
                     {
-                        Debug.Log("1"); // 输出1
+                        hit.collider.gameObject.GetComponent<MoveUp>().StartMoveUp();
+                        print(hit.collider.gameObject);
                         // 重置计时器，防止重复输出
                         hitTimer = 0f;
+                        ishited = true;
                     }
                 }
             }
