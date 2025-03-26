@@ -14,6 +14,7 @@ public class BagSystem : MonoBehaviour
         public string OriginalDate;
         public Sprite Image;
         public string Description;
+        public string GameDescription;
     }
     [SerializeField]
     public List<ItemMessage> Items;
