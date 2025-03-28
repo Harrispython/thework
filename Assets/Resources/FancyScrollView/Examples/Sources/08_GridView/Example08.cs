@@ -23,9 +23,18 @@ namespace FancyScrollView.Example08
         [SerializeField] InputField dataCountInputField = default;
         [SerializeField] InputField selectIndexInputField = default;
         [SerializeField] Dropdown alignmentDropdown = default;
+        public static Example08 instance;
 
         void Start()
         {
+            if (instance!=null)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                instance = this;
+            }
             gridView.OnCellClicked(index => selectIndexInputField.text = index.ToString());
 
             paddingTopInputField.onValueChanged.AddListener(_ =>
@@ -52,7 +61,7 @@ namespace FancyScrollView.Example08
 
             //dataCountInputField.onValueChanged.AddListener(_ =>
             //    TryParseValue(dataCountInputField, 1, 99999, GenerateCells));
-            xSpacingInputField.text = "0";
+            xSpacingInputField.text = "5";
             ySpacingInputField.text = "8";
             Invoke("Generate", 0.1f);
 
@@ -61,6 +70,12 @@ namespace FancyScrollView.Example08
 
         void Generate()
         {
+            GenerateCells(BagSystem.instance.Items, BagSystem.instance.Items.Count);
+        }
+
+        private void OnEnable()
+        {
+            if(instance)
             GenerateCells(BagSystem.instance.Items, BagSystem.instance.Items.Count);
         }
 
@@ -103,7 +118,7 @@ namespace FancyScrollView.Example08
         //    gridView.UpdateContents(items);
         //    SelectCell();
         //}
-        void GenerateCells(List<BagSystem.ItemMessage> ItemList,int dataCount)
+        public void GenerateCells(List<BagSystem.ItemMessage> ItemList,int dataCount)
         {
             var items = Enumerable.Range(0, dataCount)
                 .Select(i => new ItemData(ItemList[i],i))

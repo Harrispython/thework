@@ -194,7 +194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 7505093871897010567}
   Image: {fileID: 1188514794402686161}
-  Images: []
+  Images:
+  - {fileID: 21300000, guid: b245fab8d5cc0854bab5307e0755953d, type: 3}
+  - {fileID: 21300000, guid: 9d0febd453e3cae4785a6037d07d2522, type: 3}
+  - {fileID: -708100786, guid: fc43c6997af485346b14870f7a13ba6e, type: 3}
 --- !u!95 &7505093871897010567
 Animator:
   serializedVersion: 5

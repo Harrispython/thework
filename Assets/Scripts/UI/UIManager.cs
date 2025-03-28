@@ -124,7 +124,7 @@ public class UIManager : MonoBehaviour
                 }
                 else
                 {
-                    canvas.SetActive(false); // 关闭其他 Canvas
+                    //canvas.SetActive(false); // 关闭其他 Canvas
                 }
             }
         }

@@ -82,13 +82,13 @@ public class CompassSystem : MonoBehaviour
                 currentAngle += smoothDelta;
                 
                 // 应用旋转到指针 - 沿Z轴旋转
-                compassNeedle.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+                compassNeedle.transform.rotation = Quaternion.Euler(-90,0 , currentAngle);
             }
             else
             {
                 // 如果不启用平滑，则直接设置旋转
                 currentAngle = targetAngle; // 更新当前角度，以便在重新启用平滑时有正确的初始值
-                compassNeedle.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+                compassNeedle.transform.rotation = Quaternion.Euler(-90, 0, currentAngle);
             }
         }
     }
@@ -131,7 +131,7 @@ public class CompassSystem : MonoBehaviour
         compassCamera.cullingMask = 1 << LayerMask.NameToLayer("sinan");
         
         // 设置相机为正交模式，适合UI渲染
-        compassCamera.orthographic = true;
+        //compassCamera.orthographic = true;
         
         // 设置相机的渲染顺序为叠加，这样不会覆盖主相机的渲染结果
         compassCamera.renderingPath = RenderingPath.Forward;
