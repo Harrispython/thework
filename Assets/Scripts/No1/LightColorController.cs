@@ -83,7 +83,8 @@ public class LightColorController : MonoBehaviour
     private RotationController rotationController;
     [Tooltip("父物体上的动画控制器组件")]
     private Animator animator;
-    
+
+    public bool isbool;
     void Start()
     {
         // 获取灯光组件
@@ -234,7 +235,7 @@ public class LightColorController : MonoBehaviour
     }
     
     // 启用父物体组件并监听动画完成
-    private void EnableParentComponents()
+    public void EnableParentComponents()
     {
         if (rotationController != null)
         {
@@ -244,13 +245,23 @@ public class LightColorController : MonoBehaviour
         if (animator != null)
         {
             animator.enabled = true;
-            StartCoroutine(WaitForAnimationComplete());
+            if (!isbool)
+            {
+                StartCoroutine(WaitForAnimationComplete());
+            }
         }
+        
     }
-    
+
+    public void Startani()
+    {
+        StartCoroutine(WaitForAnimationComplete());
+
+    }
     // 监听动画完成的协程
     private IEnumerator WaitForAnimationComplete()
     {
+        print(1);
         if (animator != null)
         {
             // 等待动画播放完成

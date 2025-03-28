@@ -123,6 +123,9 @@ public class Npc : MonoBehaviour
                 canChart = false;
                 flowchart.ExecuteBlock(NpcName); // 播放对话
             }
+            
         }
+
+        
     }
 }
