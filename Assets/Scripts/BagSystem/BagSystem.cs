@@ -1,3 +1,4 @@
+using FancyScrollView.Example08;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,8 @@ public class BagSystem : MonoBehaviour
     }
     [SerializeField]
     public List<ItemMessage> Items;
-     
+    public List<ItemMessage> Itemlibrary;
+
     void Start()
     {
         if (instance != null)
@@ -28,9 +30,8 @@ public class BagSystem : MonoBehaviour
         else
         {
             instance = this;
-
+            this.transform.parent.gameObject.SetActive(false);
         }
-        DontDestroyOnLoad(gameObject);
     }
     private void OnEnable()
     {
@@ -41,6 +42,35 @@ public class BagSystem : MonoBehaviour
     {
         this.transform.Find("BackGround").Find("Description").GetComponent<Description>().SetMessage(itemMessage);
     }
+
+    //public void SetItemList()
+    //{
+    //    Example08.instance.GenerateCells(Items, Items.Count);
+
+    //}
+    public void AddItem(string ItemName)
+    {
+        // 在 Itemlibrary 中查找匹配的物品
+        ItemMessage? foundItem = Itemlibrary.Find(item => item.Name == ItemName);
+
+        if (foundItem.HasValue)
+        {
+            // 确保不重复添加
+            if (!Items.Exists(item => item.Name == ItemName))
+            {
+                Items.Add(foundItem.Value);
+            }
+            else
+            {
+                Debug.LogWarning($"Item '{ItemName}' already exists in the bag.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Item '{ItemName}' not found in the library.");
+        }
+    }
+
     public void CloseCavans()
     {
         this.transform.parent.gameObject.SetActive(false);
