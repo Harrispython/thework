@@ -7,7 +7,7 @@ public class MoveUp : MonoBehaviour
 {
     [Header("移动参数")]
     [Tooltip("上移速度（米/秒）")]
-    public float moveSpeed = 0.2f;     // 上移速度
+    public float moveSpeed = 0.5f;     // 上移速度
     
     [Tooltip("上移距离（米）")]
     public float moveDistance = 3f;   // 上移距离

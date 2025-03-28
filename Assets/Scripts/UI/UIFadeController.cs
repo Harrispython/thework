@@ -23,7 +23,7 @@ public class UIFadeController : MonoBehaviour
     
     [Header("是否重复")]
     public bool repeat=false;//判断是否需要重复
-    private bool isrepeat=false;//判断是否需要重复
+    private bool isrepeat=false;//判断是否重复过
 
     void Start()
     {
@@ -39,6 +39,10 @@ public class UIFadeController : MonoBehaviour
         currentAlpha = startVisible ? 1f : 0f;
         targetAlpha = currentAlpha;
         canvasGroup.alpha = currentAlpha;
+        if (repeat)
+        {
+            ToggleVisibility();
+        }
     }
 
     void Update()
@@ -82,15 +86,20 @@ public class UIFadeController : MonoBehaviour
             FadeOut();
             isrepeat = true;
             return;
-        } 
-        if (isVisible)
-        {
-            FadeOut();
         }
         else
         {
             FadeIn();
+            repeat=!repeat;
         }
+        // if (isVisible)
+        // {
+        //     FadeOut();
+        // }
+        // else
+        // {
+        //     FadeIn();
+        // }
     }
 
     // 渐显

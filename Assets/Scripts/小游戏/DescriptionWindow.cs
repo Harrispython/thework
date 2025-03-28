@@ -28,7 +28,7 @@ public class DescriptionWindow : MonoBehaviour
     public void SetWindow(ItemMessage Message)
     {
         message = Message;
-        this.transform.Find("名字").GetComponent<TextMeshProUGUI>().text = $"名字:{Message.message.ItemName}";
+            this.transform.Find("名字").GetComponent<TextMeshProUGUI>().text = $"名字:{Message.message.ItemName}";
         this.transform.Find("重量").GetChild(0).GetComponent<TMP_InputField>().text = "";
         
     }

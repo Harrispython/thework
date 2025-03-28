@@ -18,6 +18,8 @@ public class Npc : MonoBehaviour
     private void Start()
     {
         fadeCoroutines = new List<Coroutine>();
+
+        canChart = false;
         // 确保所有UI初始时是隐藏的
         if (promptUIs != null)
         {

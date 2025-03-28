@@ -30,7 +30,7 @@ public class LightColorController : MonoBehaviour
     [Tooltip("最小发光强度")]
     [SerializeField]
     [Range(0f, 5.0f)]
-    private float minIntensity = 0.5f;
+    private float minIntensity = 0.1f;
     
     [Tooltip("最大发光强度")]
     [SerializeField]

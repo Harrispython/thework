@@ -1,6 +1,5 @@
 trackSelection = true
 refreshSearchWindowsInPlayMode = false
-pickerAdvancedUI = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -12,6 +11,9 @@ scopes = {
 	"last_search.66F56946" = ""
 	"OpenInspectorPreview.66F56946" = "0"
 	"currentGroup.66F56946" = "all"
+	"last_search.195A2723" = ""
+	"OpenInspectorPreview.195A2723" = "0"
+	"currentGroup.195A2723" = "all"
 }
 providers = {
 	log = {
