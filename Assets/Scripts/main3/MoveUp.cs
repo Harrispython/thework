@@ -7,7 +7,7 @@ public class MoveUp : MonoBehaviour
 {
     [Header("移动参数")]
     [Tooltip("上移速度（米/秒）")]
-    public float moveSpeed = 0.5f;     // 上移速度
+    public float moveSpeed = 0.001f;     // 上移速度
     
     [Tooltip("上移距离（米）")]
     public float moveDistance = 3f;   // 上移距离
@@ -32,7 +32,7 @@ public class MoveUp : MonoBehaviour
             while (movedDistance < moveDistance)
             {
                 // 计算本帧移动距离
-                float delta = moveSpeed * Time.deltaTime;
+                float delta = moveSpeed*Time.deltaTime;
             
                 // 移动物体
                 target.transform.Translate(Vector3.up * delta);
