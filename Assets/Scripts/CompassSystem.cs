@@ -67,6 +67,11 @@ public class CompassSystem : MonoBehaviour
         compassCamera.farClipPlane = 10f;
     }
 
+    public void SetmagnetTransform(Transform magnet)
+    {
+        magnetTransform = magnet;
+    }
+    
     private bool ValidateComponents()
     {
         if (compassBase == null) { Debug.LogError("未设置指南针底座对象！"); return false; }

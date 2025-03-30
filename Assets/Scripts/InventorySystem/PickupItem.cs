@@ -5,18 +5,18 @@ public class PickupItem : MonoBehaviour
 {
     private ItemMessage item;                    // 物品组件
     public bool isInRange;               // 是否在拾取范围内
-    private GameObject player;            // 玩家对象
-    private Inventory inventory;          // 背包系统
+         // 玩家对象
+         // 背包系统
 
     private void Start()
     {
         // 获取物品组件
         item=this.GetComponent<ItemMessage>();
         // 获取玩家对象
-        player = GameObject.FindWithTag("Player");
+
         // 获取背包系统
-        inventory = player.GetComponent<Inventory>();
-        print(player.name);
+
+
     }
 
     private void Update()

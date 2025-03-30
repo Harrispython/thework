@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/01/NonameBoy/Materials/TX_M_NonameBoy01A_D.mat.meta
+guid: f5df1e4c70711a8449a66f7f7ceb2338
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+========
 guid: 20fa5894310299445aea5f58b7a4cdff
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+>>>>>>>> 4b9d13e76efc1e0de3282dc8220fd3ce6aac87ca:Assets/01/动画器/水车/Active.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

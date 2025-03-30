@@ -10,7 +10,7 @@ public class uitrigger : MonoBehaviour
     public string NpcName;
     public bool canChart=true;
 
-    public CinemachineVirtualCamera cinemachine;
+    public CinemachineFreeLook cinemachine;
     public void uibool()
     {
         if (canChart)
@@ -36,9 +36,8 @@ public class uitrigger : MonoBehaviour
 
     public void Main3Start()
     {
-        StartCoroutine(wiatsecond(1.5f));
-        GetComponent<Scriptenable>().InputEnable(true);
-        
+        StartCoroutine(wiatsecond(3.5f));
+        uibool();
     }
     
     private IEnumerator wiatsecond(float f)
@@ -47,7 +46,9 @@ public class uitrigger : MonoBehaviour
 
         // 等待指定时间
         yield return new WaitForSeconds(f);
-        uibool();
+        GetComponent<Scriptenable>().InputEnable(true);
+
+
     }
 
 }

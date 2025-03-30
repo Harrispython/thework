@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MoveUp : MonoBehaviour
 {
     [Header("移动参数")]
     [Tooltip("上移速度（米/秒）")]
-    public float moveSpeed = 0.001f;     // 上移速度
+    private float moveSpeed = 0.001f;     // 上移速度
     
     [Tooltip("上移距离（米）")]
-    public float moveDistance = 3f;   // 上移距离
+    public float moveDistance = 20f;   // 上移距离
 
     public GameObject target;
     private bool isup = false;
@@ -19,34 +20,29 @@ public class MoveUp : MonoBehaviour
     public void StartMoveUp()
     {
         // 使用协程实现平滑移动
+        
         StartCoroutine(MoveUpCoroutine());
     }
     
-    private void Update()
-    {
-        if (isup)
-        {
-            float movedDistance = 0;
-
-            // 当移动距离小于目标距离时继续移动
-            while (movedDistance < moveDistance)
-            {
-                // 计算本帧移动距离
-                float delta = moveSpeed*Time.deltaTime;
-            
-                // 移动物体
-                target.transform.Translate(Vector3.up * delta);
-            
-                // 更新已移动距离
-                movedDistance += delta;
-            
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     if (isup)
+    //     {
+    //         float movedDistance = 0;
+    //
+    //         // 当移动距离小于目标距离时继续移动
+    //         while (movedDistance < moveDistance)
+    //         {
+    //
+    //         
+    //         }
+    //     }
+    // }
 
     private System.Collections.IEnumerator MoveUpCoroutine()
     {
         yield return new WaitForSeconds(1f);
+        target.transform.DOMove(new Vector3(target.transform.position.x, target.transform.position.y+20, target.transform.position.z), 5f);
         isup = true;
     }
 }
