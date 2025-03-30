@@ -12,6 +12,7 @@ public class Scriptenable : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
         player.GetComponent<PlayerInput>().enabled = enable;
+        
     }
 
     private void OnTriggerEnter(Collider other)

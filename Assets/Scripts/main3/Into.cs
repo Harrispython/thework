@@ -22,7 +22,10 @@ public class Into : MonoBehaviour
         {
             if (!wasChart&&GetComponent<Npc>().canChart)
             {
+                BagSystem.instance.transform.parent.gameObject.SetActive(true);
                 GetComponent<gameobjectenable>().enableStart();
+                UIManager.Instance.IsUIVisible = true;
+                Inout.SetCounter();
                 wasChart = true;
             }
         }

@@ -255,6 +255,7 @@ public class LightColorController : MonoBehaviour
 
     public void Startani()
     {
+
         StartCoroutine(WaitForAnimationComplete());
 
     }

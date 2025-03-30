@@ -4,12 +4,13 @@ using UnityEngine.UI;
 public class LoadingManager : MonoBehaviour
 {
     public Button enterGameButton; // “进入游戏”按钮
-
+    public GameObject Canvans;
 
     void Start()
     {
         enterGameButton.gameObject.SetActive(false); // 初始隐藏按钮
         LoaderManager.Instance.StartLoading();
+        Canvans.gameObject.SetActive(true);
     }
 
     void Update()

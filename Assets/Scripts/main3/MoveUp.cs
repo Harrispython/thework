@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Fungus;
 
 public class MoveUp : MonoBehaviour
 {
@@ -42,7 +43,15 @@ public class MoveUp : MonoBehaviour
     private System.Collections.IEnumerator MoveUpCoroutine()
     {
         yield return new WaitForSeconds(1f);
-        target.transform.DOMove(new Vector3(target.transform.position.x, target.transform.position.y+20, target.transform.position.z), 5f);
+        target.transform.DOMove(new Vector3(target.transform.position.x, target.transform.position.y + 20, target.transform.position.z), 5f).OnComplete(() =>
+        ActiveItemcavans()
+        );
         isup = true;
+    }
+    public void ActiveItemcavans()
+    {
+        ItemCavans.instacnce.gameObject.SetActive(true);
+        ItemCavans.instacnce.SetImage("铜镜");
+        ItemCavans.instacnce.CloseItem();
     }
 }

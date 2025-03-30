@@ -5,8 +5,9 @@ public class PickupItem : MonoBehaviour
 {
     private ItemMessage item;                    // 物品组件
     public bool isInRange;               // 是否在拾取范围内
-         // 玩家对象
-         // 背包系统
+    public SayDialog sayDialog;
+    // 玩家对象
+    // 背包系统
 
     private void Start()
     {
@@ -32,7 +33,10 @@ public class PickupItem : MonoBehaviour
             Flowchart flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
             if (flowchart.HasBlock("交互获取物品"))
             {
+                flowchart.SetStringVariable("ItemName", item.message.ItemName);
                 flowchart.ExecuteBlock("交互获取物品"); // 播放对话
+
+
                 if (ItemCavans.instacnce)
                 {
                     ItemCavans.instacnce.SetImage(item.message.ItemName);//修改获取UI图片，添加物品到背包
