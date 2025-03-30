@@ -54,5 +54,6 @@ public class gameobjectenable : MonoBehaviour
             objectStates[i].targetObject.SetActive(objectStates[i].isEnabled);
             objectStates[i].isEnabled = !objectStates[i].isEnabled;
         }
+
     }
 }

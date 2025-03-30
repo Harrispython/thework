@@ -307,7 +307,7 @@ namespace Fungus
             }
             catch (System.Exception ex)
             {
-                Debug.LogError("Error: " + ex.Message);
+                Debug.LogError("Error: " + ex.Message); 
             }      
         }
 

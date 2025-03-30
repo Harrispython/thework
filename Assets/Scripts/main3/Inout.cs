@@ -4,28 +4,42 @@ using UnityEngine;
 
 public class Inout : MonoBehaviour
 {
-    private int counter=0;
+    public static int counter=0;
     private bool wasChart;
 
-    
+ 
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    public static void SetCounter()
+    {
+        counter++;
+    }
     // Update is called once per frame
     void Update()
     {
        
 
-        if (counter==0)
+        if (counter==3)
         {
-            final();
+            StartCoroutine(MoveUpCoroutine());
             counter++;
         }
     }
-    
+
+
+    private System.Collections.IEnumerator MoveUpCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        final();
+
+
+    }
+
     public void final()
     {
         LightColorController cc = gameObject.GetComponent<LightColorController>();

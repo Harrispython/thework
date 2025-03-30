@@ -73,6 +73,12 @@ public class BagSystem : MonoBehaviour
         }
     }
 
+    public void DelectItem()
+    {
+        Items.RemoveAt(int.Parse(Example08.instance.selectIndexInputField.text));
+        Example08.instance.GenerateCells(Items, Items.Count);
+    }
+
     public void CloseCavans()
     {
         this.transform.parent.gameObject.SetActive(false);

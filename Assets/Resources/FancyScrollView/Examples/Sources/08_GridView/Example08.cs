@@ -21,7 +21,7 @@ namespace FancyScrollView.Example08
         [SerializeField] InputField xSpacingInputField = default;
         [SerializeField] InputField ySpacingInputField = default;
         [SerializeField] InputField dataCountInputField = default;
-        [SerializeField] InputField selectIndexInputField = default;
+        [SerializeField] public  InputField selectIndexInputField = default;
         [SerializeField] Dropdown alignmentDropdown = default;
         public static Example08 instance;
 
