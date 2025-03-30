@@ -158,7 +158,6 @@ namespace MoonBika
                     if (hitTimer >= hitDuration&&!ishited)
                     {
                         hit.collider.gameObject.GetComponent<MoveUp>().StartMoveUp();
-                        print(hit.collider.gameObject);
                         // 重置计时器，防止重复输出
                         hitTimer = 0f;
                         ishited = true;
