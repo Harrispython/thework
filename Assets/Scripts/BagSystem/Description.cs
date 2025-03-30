@@ -16,7 +16,7 @@ public class Description : MonoBehaviour
     {
         DescriptionText.text = itemMessage.Description;
         DescriptionImage.sprite = itemMessage.Image;
-        DescriptionName.text = $"{itemMessage.Name}\n∆‘¥:{itemMessage.OriginalDate}";
+        DescriptionName.text = $"{itemMessage.Name}\nËµ∑Ê∫ê:{itemMessage.OriginalDate}";
         GameDescription.text = $"      {itemMessage.GameDescription}";
     }
     public void ActiveGameDescription(bool isactive)

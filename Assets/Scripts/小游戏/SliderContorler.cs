@@ -8,21 +8,21 @@ public class SliderContorler : MonoBehaviour
 {
     public static SliderContorler instance;
     public Slider slider;
-    public float itemHeight; // ÎïÌåÖØÁ¿
-    public string itemName; // ÎïÌåÃû×Ö
-    public float itemLenght; // ÎïÌåÁ¦±Û
+    public float itemHeight; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public string itemName; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public float itemLenght; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public Image itemImage;
-    public float Coefficient; // ÇãĞ±ÏµÊı
-    public float Differencevalue; // ²îÖµ
+    public float Coefficient; // ï¿½ï¿½Ğ±Ïµï¿½ï¿½
+    public float Differencevalue; // ï¿½ï¿½Öµ
     public float minHeight;
 
-    public TextMeshProUGUI DisplayScale; // ÏÔÊ¾¿Ì¶È
+    public TextMeshProUGUI DisplayScale; // ï¿½ï¿½Ê¾ï¿½Ì¶ï¿½
 
-    public Action<ItemMessage> OnItemSet; // ÊÂ¼şÎ¯ÍĞ
+    public Action<ItemMessage> OnItemSet; // ï¿½Â¼ï¿½Î¯ï¿½ï¿½
 
     private void Start()
     {
-        // ¶©ÔÄÊÂ¼ş
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         if (instance == null)
         {
             instance = this;
@@ -42,7 +42,7 @@ public class SliderContorler : MonoBehaviour
 
     public void SetScale()
     {
-        DisplayScale.text = $"{(minHeight * slider.value * 10):F2}½ï";
+        DisplayScale.text = $"{(minHeight * slider.value * 10):F2}å…‹";
     }
 
     public void enableScale()

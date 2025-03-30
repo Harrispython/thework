@@ -1,3 +1,4 @@
+using System;
 using Fungus;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ public class ColliderTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isInRange;
+    public String chatname;
     private void OnTriggerEnter(Collider other)
     {
         isInRange= true;
@@ -18,25 +20,21 @@ public class ColliderTrigger : MonoBehaviour
     }
     private void Update()
     {
-
-        if (isInRange)
-        {
-            print("ÔÚÊ°È¡·¶Î§ÄÚ");
-        }
-        // ¼ì²éÊÇ·ñÔÚÊ°È¡·¶Î§ÄÚ
+        
+        // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ê°È¡ï¿½ï¿½Î§ï¿½ï¿½
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             Flowchart flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
-            if (flowchart.HasBlock("Ïú»Ù´ÅÊ¯"))
+            if (flowchart.HasBlock(chatname))
             {
-                flowchart.ExecuteBlock("Ïú»Ù´ÅÊ¯");
+                flowchart.ExecuteBlock(chatname);
             }
-            // ³¢ÊÔÊ°È¡ÎïÆ·
+            // ï¿½ï¿½ï¿½ï¿½Ê°È¡ï¿½ï¿½Æ·
         }
     }
     public void DestroyGameobject()
     {
-        Destroy(this.transform.parent.gameObject);
+        Destroy(gameObject);
     }
 
 }

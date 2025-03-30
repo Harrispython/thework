@@ -52,12 +52,12 @@ public class BagSystem : MonoBehaviour
     //}
     public void AddItem(string ItemName)
     {
-        // ÔÚ Itemlibrary ÖÐ²éÕÒÆ¥ÅäµÄÎïÆ·
+        // ï¿½ï¿½ Itemlibrary ï¿½Ð²ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
         ItemMessage? foundItem = Itemlibrary.Find(item => item.Name == ItemName);
 
         if (foundItem.HasValue)
         {
-            // È·±£²»ÖØ¸´Ìí¼Ó
+            // È·ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½
             if (!Items.Exists(item => item.Name == ItemName))
             {
                 Items.Add(foundItem.Value);
