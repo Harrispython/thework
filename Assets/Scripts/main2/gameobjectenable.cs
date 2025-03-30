@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class gameobjectenable : MonoBehaviour
 {
+    
+    
+    
     // 创建一个结构体来存储每个对象的状态
     [System.Serializable]
     public struct ObjectState
@@ -13,6 +17,12 @@ public class gameobjectenable : MonoBehaviour
     // 使用数组存储所有对象的状态
     [SerializeField] 
     private ObjectState[] objectStates;
+
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     // 外部调用方法,可以控制单个对象
     public void EnableSingle(int index, bool target)

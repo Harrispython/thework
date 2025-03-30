@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using StarterAssets;
+
 public class UIManager : MonoBehaviour
 {
     // 单例实例
     private static UIManager instance;
     GameObject canvasPrefab;
+    public GameObject PlayerPrefab;
     public List<GameObject> CavansList;
     // 全局访问点
     public static UIManager Instance
@@ -38,6 +41,7 @@ public class UIManager : MonoBehaviour
         {
             isUIVisible = value;
             Cursor.lockState = isUIVisible ? CursorLockMode.None : CursorLockMode.Locked;
+            PlayerPrefab.GetComponent<ThirdPersonController>().SetLockCameraPosition(isUIVisible);
             // 这里可以添加UI显示状态改变时的其他逻辑
             Debug.Log($"UI显示状态已更改为: {value}");
         }

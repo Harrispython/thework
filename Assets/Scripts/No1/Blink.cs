@@ -84,7 +84,7 @@ public class Blink : MonoBehaviour
         {
             // 如果当前材质为第一个材质，设置 "_Param" 参数
             _img.material.SetVector("_Param", new Vector4(0.8f, y, 1, 1));
-        }
+        } 
         else if (_curMatId == 1)
         {
             // 如果当前材质为第二个材质，设置 "_Height" 参数

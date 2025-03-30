@@ -110,6 +110,12 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+
+        public void SetLockCameraPosition(bool value)
+        {
+            LockCameraPosition = value;
+        }
+        
         private bool IsCurrentDeviceMouse
         {
             get
