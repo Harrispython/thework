@@ -23,6 +23,6 @@ public class CameraControl : MonoBehaviour
 
     private void SetActiveCamera(CinemachineVirtualCamera activeCam)
     {
-        VirtualCameraList.ForEach(cam => cam.Priority = (cam == activeCam) ? 10 : 0);
+        VirtualCameraList.ForEach(cam => cam.Priority = (cam == activeCam) ? 25 : 0);
     }
 }

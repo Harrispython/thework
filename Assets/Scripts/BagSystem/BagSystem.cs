@@ -77,6 +77,9 @@ public class BagSystem : MonoBehaviour
     {
         Items.RemoveAt(int.Parse(Example08.instance.selectIndexInputField.text));
         Example08.instance.GenerateCells(Items, Items.Count);
+        CloseCavans();
+        Inout.SetCounter();
+
     }
 
     public void CloseCavans()
@@ -88,6 +91,8 @@ public class BagSystem : MonoBehaviour
     {
         Animator.SetTrigger("ActiveTrigger");
     }
+
+
 
 
 }

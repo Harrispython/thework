@@ -25,7 +25,8 @@ public class Into : MonoBehaviour
                 BagSystem.instance.transform.parent.gameObject.SetActive(true);
                 GetComponent<gameobjectenable>().enableStart();
                 UIManager.Instance.IsUIVisible = true;
-                Inout.SetCounter();
+                //Inout.SetCounter();
+
                 wasChart = true;
             }
         }

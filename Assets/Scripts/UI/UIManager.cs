@@ -47,8 +47,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ActiveMouse()
+    {
+
+        if (Input.GetKey(KeyCode.LeftAlt)) // 长按 ALT 键
+        {
+            Cursor.lockState = CursorLockMode.None; // 显示鼠标
+            Cursor.visible = true;
+
+        }
+    }
+
+
     private void Update()
     {
+        ActiveMouse();
         if (Input.GetKeyDown(KeyCode.B))
         {
             ActiveCavans("BagCavans");
