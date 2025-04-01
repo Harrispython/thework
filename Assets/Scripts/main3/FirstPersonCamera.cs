@@ -23,7 +23,7 @@ public class FirstPersonCamera : MonoBehaviour
 
         // 锁定并隐藏鼠标
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     private void Update()

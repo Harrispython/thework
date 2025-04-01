@@ -1,3 +1,4 @@
+using Fungus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,17 +19,30 @@ public class Inout : MonoBehaviour
     public static void SetCounter()
     {
         counter++;
+        if (counter == 3)
+        {
+            Flowchart flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
+            if (flowchart.HasBlock("DescriptionWindow"))
+            {
+                flowchart.ExecuteBlock("DescriptionWindow");
+            }
+            else
+            {
+                Debug.Log("DOn't have block");
+            }
+        }
+
     }
     // Update is called once per frame
     void Update()
     {
        
 
-        if (counter==3)
-        {
-            StartCoroutine(MoveUpCoroutine());
-            counter++;
-        }
+        //if (counter==3)
+        //{
+        //    StartCoroutine(MoveUpCoroutine());
+        //    counter++;
+        //}
     }
 
 
@@ -36,8 +50,6 @@ public class Inout : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         final();
-
-
     }
 
     public void final()
