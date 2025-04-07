@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\work\\thework\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D078881-A49F-A78A-60FE-AB39227FBE27}|Assembly-CSharp.csproj|e:\\work\\thework\\assets\\scripts\\main3\\cameraviewswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D078881-A49F-A78A-60FE-AB39227FBE27}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main3\\cameraviewswitch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraViewSwitch.cs",
+              "DocumentMoniker": "E:\\work\\thework\\Assets\\Scripts\\main3\\CameraViewSwitch.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\main3\\CameraViewSwitch.cs",
+              "ToolTip": "E:\\work\\thework\\Assets\\Scripts\\main3\\CameraViewSwitch.cs",
+              "RelativeToolTip": "Assets\\Scripts\\main3\\CameraViewSwitch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T09:13:16.59Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

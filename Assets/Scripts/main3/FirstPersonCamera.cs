@@ -12,9 +12,10 @@ public class FirstPersonCamera : MonoBehaviour
     public float horizontalSpeed = 2.0f;
 
     private CameraViewSwitch viewSwitch;
-
+    private Vector3 fixedPos;
     private void Start()
     {
+        fixedPos = firstPersonCamera.transform.position;//固定相机位置
         viewSwitch = GetComponent<CameraViewSwitch>();
         if (viewSwitch == null)
         {
@@ -28,6 +29,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     private void Update()
     {
+        firstPersonCamera.transform.position = fixedPos;
         if (viewSwitch != null && viewSwitch.IsInFirstPerson())
         {
             // 获取鼠标水平输入
