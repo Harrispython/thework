@@ -46,6 +46,23 @@
     /// </summary>
     public class EndlessBook : MonoBehaviour
     {
+        [SerializeField]
+        private BookAnimator _bookLeft;
+        [SerializeField]
+        private BookAnimator _bookRight;
+
+        public BookAnimator BookLeft
+        {
+            get { return _bookLeft; }
+            set { _bookLeft = value; }
+        }
+
+        public BookAnimator BookRight
+        {
+            get { return _bookRight; }
+            set { _bookRight = value; }
+        }
+
         /// <summary>
         /// Mappings set up on the animated book and all static standins.
         /// These mappings are used to update the materials on all meshes
@@ -870,6 +887,9 @@
         /// <param name="page"></param>
         public virtual void PageTurnCompleted(Page page)
         {
+            // 输出当前页数
+
+            
             // set the new far page number
             turnToPage.farPageNumber += (turnToPage.turnDirection == Page.TurnDirectionEnum.TurnForward ? 1 : -1) * 2;
             turnToPage.pagesLeftToComplete--;
@@ -917,6 +937,8 @@
                     case Page.TurnDirectionEnum.TurnBackward: SetMaterial(MaterialEnum.BookPageRight, page.PageFrontMaterial); break;
                 }
             }
+            //Debug.Log($"当前页数: {currentPageNumber}");
+            //BookAnimator.instance.ChangeImage(currentPageNumber);
         }
 
         /// <summary>
@@ -1352,6 +1374,7 @@
             PageTurnDelegate onPageTurnEnd = null
             )
         {
+            //Debug.Log("TurnForward");
             // only do this call if the book is in the OpenMiddle state and not on the last group of pages
             if (currentState != StateEnum.OpenMiddle || IsLastPageGroup) return;
 

@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using UnityEngine;
     using echo17.EndlessBook;
+    using static echo17.EndlessBook.Demo02.PageView_02;
 
     /// <summary>
     /// Table of contents page.
@@ -22,13 +23,20 @@
             public string gameObjectName;
             public int pageNumber;
         }
-
+        public EndlessBook book;
         public ChapterJump[] chapterJumps;
 
         protected override bool HandleHit(RaycastHit hit, BookActionDelegate action)
         {
             // no action, just return
+            //Debug.Log("Enter");
             if (action == null) return false;
+
+            if (hit.collider.gameObject.name == "添加")
+            {
+                action(BookActionTypeEnum.TurnPage,book.LastPageNumber);
+                return true;
+            }
 
             // check each collider and jump to a page if that collider was hit.
 
