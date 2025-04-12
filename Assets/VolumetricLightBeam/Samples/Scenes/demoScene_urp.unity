@@ -676,6 +676,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.235
       objectReference: {fileID: 0}
+    - target: {fileID: 4552080145407932, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552080145407932, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627795392838042, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.96
+      objectReference: {fileID: 0}
     - target: {fileID: 4628049117585378, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -723,6 +735,22 @@ PrefabInstance:
     - target: {fileID: 114037569193580282, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114037569193580282, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: planeOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114037569193580282, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: waitXFrames
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114037569193580282, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: minOccluderArea
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114037569193580282, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
+      propertyPath: fadeDistanceToSurface
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114614332653023766, guid: a5b31ce7120d19240a6d307ea883fe5b, type: 3}
       propertyPath: m_Enabled

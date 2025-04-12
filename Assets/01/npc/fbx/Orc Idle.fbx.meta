@@ -378,16 +378,6 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0.1621568, y: -0.12643611, z: -0.010324303, w: 0.9785768}
       scale: {x: 1, y: 1, z: 1}
-    - name: N_ca050
-      parentName: Orc Idle(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Object01
-      parentName: Orc Idle(Clone)
-      position: {x: 1.2812225, y: 0.00092704775, z: -0.037845418}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
     - name: Bip01
       parentName: Orc Idle(Clone)
       position: {x: 0.0015649232, y: 0.875289, z: 0.008103634}
@@ -403,6 +393,56 @@ ModelImporter:
       position: {x: 0.28377742, y: -0.0179701, z: 0.17461601}
       rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
       scale: {x: 1.0000005, y: 1.0000002, z: 1.0000004}
+    - name: Bip01 L Thigh
+      parentName: Bip01 Pelvis
+      position: {x: 0.00000019378662, y: 0.00000018167495, z: 0.09820978}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: Bip01 L Calf
+      parentName: Bip01 L Thigh
+      position: {x: -0.42427143, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000002}
+    - name: Bip01 L Foot
+      parentName: Bip01 L Calf
+      position: {x: -0.4509878, y: 0.000000001513958, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
+    - name: Bip01 L Toe0
+      parentName: Bip01 L Foot
+      position: {x: -0.094927676, y: 0.19793679, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip01 L Toe0Nub
+      parentName: Bip01 L Toe0
+      position: {x: -0.012381875, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: -1, y: -1, z: -1}
+    - name: Bip01 R Thigh
+      parentName: Bip01 Pelvis
+      position: {x: -0.00000009689331, y: -0.000000090837474, z: -0.098209776}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000004}
+    - name: Bip01 R Calf
+      parentName: Bip01 R Thigh
+      position: {x: -0.42427137, y: -0.000000006055832, z: 0.000000024223327}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: Bip01 R Foot
+      parentName: Bip01 R Calf
+      position: {x: -0.45098773, y: 0.000000012111664, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000002}
+    - name: Bip01 R Toe0
+      parentName: Bip01 R Foot
+      position: {x: -0.09492767, y: 0.19793679, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip01 R Toe0Nub
+      parentName: Bip01 R Toe0
+      position: {x: -0.012381863, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     - name: Bip01 Spine
       parentName: Bip01 Pelvis
       position: {x: -0.094856225, y: 0.000006019497, z: 0.002671833}
@@ -528,59 +568,9 @@ ModelImporter:
       position: {x: -0.059892565, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: -1, y: -1, z: -1}
-    - name: Bip01 L Thigh
-      parentName: Bip01 Pelvis
-      position: {x: 0.00000019378662, y: 0.00000018167495, z: 0.09820978}
-      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-      scale: {x: 0.9999998, y: 0.99999994, z: 1}
-    - name: Bip01 L Calf
-      parentName: Bip01 L Thigh
-      position: {x: -0.42427143, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000002}
-    - name: Bip01 L Foot
-      parentName: Bip01 L Calf
-      position: {x: -0.4509878, y: 0.000000001513958, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.99999994, y: 0.9999998, z: 0.99999994}
-    - name: Bip01 L Toe0
-      parentName: Bip01 L Foot
-      position: {x: -0.094927676, y: 0.19793679, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Bip01 L Toe0Nub
-      parentName: Bip01 L Toe0
-      position: {x: -0.012381875, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: -1, y: -1, z: -1}
-    - name: Bip01 R Thigh
-      parentName: Bip01 Pelvis
-      position: {x: -0.00000009689331, y: -0.000000090837474, z: -0.098209776}
-      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000004}
-    - name: Bip01 R Calf
-      parentName: Bip01 R Thigh
-      position: {x: -0.42427137, y: -0.000000006055832, z: 0.000000024223327}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.99999994, y: 1.0000002, z: 1}
-    - name: Bip01 R Foot
-      parentName: Bip01 R Calf
-      position: {x: -0.45098773, y: 0.000000012111664, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000002}
-    - name: Bip01 R Toe0
-      parentName: Bip01 R Foot
-      position: {x: -0.09492767, y: 0.19793679, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Bip01 R Toe0Nub
-      parentName: Bip01 R Toe0
-      position: {x: -0.012381863, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: Dummy01
       parentName: Orc Idle(Clone)
-      position: {x: 0.512001, y: 1.1040834, z: 0.02278657}
+      position: {x: 0.48, y: 1.104, z: 0.023}
       rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: B_bone01
@@ -603,6 +593,16 @@ ModelImporter:
       position: {x: -0.90379095, y: -0.5133616, z: -0.00000009689331}
       rotation: {x: 0.00000005681067, y: 0.000000059604638, z: 0.7194862, w: 0.69450676}
       scale: {x: 1, y: 0.9999999, z: 1}
+    - name: N_ca050
+      parentName: Orc Idle(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Object01
+      parentName: Orc Idle(Clone)
+      position: {x: 1.2812225, y: 0.00092704775, z: -0.037845418}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

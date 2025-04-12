@@ -49,14 +49,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Ambient_Occlusion: 1
-    - _Blend_Opacity: 0.6
-    - _Metalic: 0
+    - _Ambient_Occlusion: 1.84
+    - _Blend_Opacity: -2.67
+    - _Metalic: 1.11
     - _Paralell: 0
-    - _Parallex_Offset: 0.5
+    - _Parallex_Offset: 0.39
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smouthness: 0.5
+    - _Smouthness: -0.08
     m_Colors:
     - _Emmision: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
