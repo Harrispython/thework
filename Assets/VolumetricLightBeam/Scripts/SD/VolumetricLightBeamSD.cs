@@ -111,7 +111,7 @@ namespace VLB
         public float alphaOutside { get { return intensityOutside; } set { intensityOutside = value; } }
 
         /// <summary>
-        /// Global beam intensity, to use when intensityModeAdvanced is false.
+        /// Global beam intensity, to use when intensityModeAdvanced is false. 
         /// Otherwise use intensityOutside and intensityInside independently.
         /// </summary>  
         public float intensityGlobal { get { return intensityOutside; } set { intensityInside = value; intensityOutside = value; } }

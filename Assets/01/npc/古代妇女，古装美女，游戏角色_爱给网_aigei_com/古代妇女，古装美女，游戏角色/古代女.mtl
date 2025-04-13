@@ -1,0 +1,126 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# 创建的文件:20.09.2024 19:05:24
+
+newmtl Material__32
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\women02.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\women02.dds
+
+newmtl Material__31
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\women.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\women.dds
+
+newmtl Material__28
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\face_d.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\face_d.dds
+	map_bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\face_n.dds
+	bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\face_n.dds
+
+newmtl Material__25
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\body_d.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\body_d.dds
+	map_bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\body_n.dds
+	bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\body_n.dds
+
+newmtl Material__26
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\eyes_d.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\eyes_d.dds
+	map_bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\eyes_n.dds
+	bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\eyes_n.dds
+
+newmtl Material__29
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\feet_d.dds
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\feet_d.dds
+	map_bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\feet_n.dds
+	bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\feet_n.dds
+
+newmtl Material__27
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\jiemao_d.tga
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\jiemao_d.tga
+	map_d C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\jiemao_d.tga
+
+newmtl Material__33
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\hair_d.tga
+	map_Kd C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\hair_d.tga
+	map_d C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\hair_d.tga
+	map_bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\hair_n.tga
+	bump C:\Users\Admin\Desktop\古代妇女，古装美女，游戏角色\textures\gudaifunv\hair_n.tga
