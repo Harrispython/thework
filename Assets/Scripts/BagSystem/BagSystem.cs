@@ -1,3 +1,5 @@
+using echo17.EndlessBook;
+using echo17.EndlessBook.Demo02;
 using FancyScrollView.Example08;
 using System;
 using System.Collections;
@@ -14,11 +16,15 @@ public class BagSystem : MonoBehaviour
         public string Name;
         public string OriginalDate;
         public Sprite Image;
+        public Material ImageMateral;
+        public Material DescriptionMateral;
         [TextArea]
         public string Description;
         [TextArea]
         public string GameDescription;
     }
+    public EndlessBook book;
+    public Demo02 Demo02;
     [SerializeField]
     public List<ItemMessage> Items;
     public List<ItemMessage> Itemlibrary;
@@ -75,17 +81,39 @@ public class BagSystem : MonoBehaviour
 
     public void DelectItem()
     {
-        Items.RemoveAt(int.Parse(Example08.instance.selectIndexInputField.text));
+        int TempInex = (int.Parse(Example08.instance.selectIndexInputField.text));
+        if (book && Demo02)
+        {
+            book.InsertPageData(book.CurrentLeftPageNumber, Items[TempInex].DescriptionMateral);
+            book.InsertPageData(book.CurrentLeftPageNumber, Items[TempInex].ImageMateral);
+            Demo02.pageViews[0].gameObject.name = $"PageView_{book.LastPageNumber - 1}";
+        }
+        Items.RemoveAt(TempInex);
         Example08.instance.GenerateCells(Items, Items.Count);
         CloseCavans();
-        Inout.SetCounter();
+        //Inout.SetCounter();
 
     }
 
     public void CloseCavans()
     {
+        if (TouchPad.instance.gameObject.activeSelf)
+        {
+            StartCoroutine(DelaySetTouchMask());
+        }
+        else
+        {
+            this.transform.parent.gameObject.SetActive(false);
+            UIManager.Instance.IsUIVisible = false;
+        }
+    }
+
+    private IEnumerator DelaySetTouchMask()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("SetTrue");
+        TouchPad.instance.SetTouchMask(true);
         this.transform.parent.gameObject.SetActive(false);
-        UIManager.Instance.IsUIVisible= false;
     }
     public void ActiveCavans()
     {

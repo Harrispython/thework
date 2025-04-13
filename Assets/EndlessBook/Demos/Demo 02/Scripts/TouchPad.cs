@@ -12,6 +12,8 @@
     /// </summary>
     public class TouchPad : MonoBehaviour
     {
+        public static TouchPad instance;
+        public bool IsLook;
         /// <summary>
         /// Touchpad collider names
         /// </summary>
@@ -109,6 +111,18 @@
             }
         }
 
+        private void Start()
+        {
+            if(instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -127,7 +141,24 @@
                 DetectDrag(Input.mousePosition);
             }
         }
+        public void SetTouchMask(bool enableAll)
+        {
+            if (enableAll)
+            {
+                // 全部层都启用（注意：仅对包含 Collider 的有效层）
+                pageTouchPadLayerMask = ~0; // 等于 0xFFFFFFFF
+            }
+            else
+            {
+                // 全部禁用
+                pageTouchPadLayerMask = 0;
+            }
+        }
 
+        public void SetIslook(bool look)
+        {
+            IsLook= look;
+        }
         /// <summary>
         /// Turn a page collider on or off.
         /// Useful if we are in a state of the book that cannot handle one of the colliders,
@@ -269,10 +300,10 @@
             RaycastHit hit;
 
             // cast the ray against the collider mask
-            if (Physics.Raycast(ray, out hit, 1000, pageTouchPadLayerMask))
+            if (Physics.Raycast(ray, out hit, 100000, pageTouchPadLayerMask))
             {
                 // hit
-
+                //Debug.Log($"点击命中：{hit.collider.gameObject.name}，位置：{hit.point}");
                 // determine which page was hit
                 page = hit.collider.gameObject.name == PageLeftColliderName ? PageEnum.Left : PageEnum.Right;
 
@@ -291,6 +322,10 @@
                                                         );
 
                 return true;
+            }
+            else
+            {
+                Debug.Log($"Raycast 没打中任何 Collider");
             }
 
             return false;
