@@ -22,6 +22,10 @@ public class BookAnimator : MonoBehaviour
     private EndlessBook _book;
     [SerializeField]
     private BookEnum _bookEnum;
+    public TextMeshProUGUI Description;
+    [TextArea(5, 10)]
+    public string Text;
+    public Material Material;
     public static BookAnimator instance;
 
     public Animator Animator
@@ -66,6 +70,7 @@ public class BookAnimator : MonoBehaviour
         set { _bookEnum = value; }
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +86,11 @@ public class BookAnimator : MonoBehaviour
 
     private void OnEnable()
     {
+        if (Description && Text != null)
+        {
+            StartTyping();
+        }
+
         if (_animator)
         {
             _animator.SetTrigger("Active");
@@ -105,9 +115,29 @@ public class BookAnimator : MonoBehaviour
         }
 
     }
-    // Update is called once per frame
-    void Update()
+
+
+    public void Active(Material TempMateral)
     {
-        
+        if (TempMateral == Material)
+        {
+            StartTyping();
+        }
+    }
+
+    public void StartTyping()
+    {
+        StopAllCoroutines(); // 如果之前有在打字，先停止
+        StartCoroutine(TypeText());
+    }
+
+    private IEnumerator TypeText()
+    {
+        Description.text = "";
+        foreach (char letter in Text)
+        {
+            Description.text += letter;
+            yield return new WaitForSeconds(0.05f); // 每个字之间的间隔时间（可调）
+        }
     }
 }

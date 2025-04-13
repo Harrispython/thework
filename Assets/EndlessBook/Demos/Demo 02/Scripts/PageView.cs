@@ -19,7 +19,7 @@
         /// is page interaction
         /// </summary>
         public LayerMask raycastLayerMask;
-        public float maxRayCastDistance = 1000f;
+        public float maxRayCastDistance = 100000f;
 
         void Awake()
         {

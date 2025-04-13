@@ -24,17 +24,30 @@
             public int pageNumber;
         }
         public EndlessBook book;
+        public Demo02 Demo02;
         public ChapterJump[] chapterJumps;
 
         protected override bool HandleHit(RaycastHit hit, BookActionDelegate action)
         {
             // no action, just return
-            //Debug.Log("Enter");
+            Debug.Log("Enter");
             if (action == null) return false;
 
-            if (hit.collider.gameObject.name == "添加")
+            if (hit.collider.gameObject.name == "LastPage")
             {
                 action(BookActionTypeEnum.TurnPage,book.LastPageNumber);
+                return true;
+            }
+            if (hit.collider.gameObject.name == "Add")
+            {
+                //if (book&&Demo02)
+                //{
+                //    book.InsertPageData(book.CurrentLeftPageNumber, Materals[0]);
+                //    book.InsertPageData(book.CurrentLeftPageNumber, Materals[0]);
+                //    Demo02.pageViews[0].gameObject.name = $"PageView_{book.LastPageNumber - 1}";
+                //}
+                BagSystem.instance.transform.parent.gameObject.SetActive(true);//Active BagCavans
+                TouchPad.instance.SetTouchMask(false);//close TouchMask
                 return true;
             }
 
