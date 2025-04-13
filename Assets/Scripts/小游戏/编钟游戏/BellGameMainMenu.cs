@@ -356,35 +356,41 @@ namespace 小游戏.编钟游戏
                 targetPanelGroup = targetPanel.AddComponent<CanvasGroup>();
             }
 
+            // 记录目标面板的原始位置
+            RectTransform targetRect = targetPanel.GetComponent<RectTransform>();
+            Vector2 originalTargetPos = targetRect.anchoredPosition;
+
             // 如果有当前面板，先淡出
             if (_currentPanel != null && _currentPanel != targetPanel)
             {
+                // 记录当前面板的原始位置
+                RectTransform currentRect = _currentPanel.GetComponent<RectTransform>();
+                Vector2 originalCurrentPos = currentRect.anchoredPosition;
+                float startAlpha = _currentPanelGroup.alpha;
+                
                 // 淡出当前面板
                 float elapsedTime = 0f;
-                float startAlpha = _currentPanelGroup.alpha;
-                RectTransform currentRect = _currentPanel.GetComponent<RectTransform>();
-                Vector2 startPos = currentRect.anchoredPosition;
-                
                 while (elapsedTime < panelFadeTime)
                 {
                     float t = elapsedTime / panelFadeTime;
                     _currentPanelGroup.alpha = Mathf.Lerp(startAlpha, 0f, t);
-                    currentRect.anchoredPosition = Vector2.Lerp(startPos, 
-                        new Vector2(startPos.x, startPos.y + panelMoveDistance), t);
+                    currentRect.anchoredPosition = Vector2.Lerp(originalCurrentPos, 
+                        new Vector2(originalCurrentPos.x, originalCurrentPos.y + panelMoveDistance), t);
                     elapsedTime += Time.deltaTime;
                     yield return null;
                 }
 
                 _currentPanelGroup.alpha = 0f;
+                // 确保当前面板回到原位，避免位置累积偏差
+                currentRect.anchoredPosition = originalCurrentPos;
                 _currentPanel.SetActive(false);
             }
 
             // 准备新面板
             targetPanel.SetActive(true);
             targetPanelGroup.alpha = 0f;
-            RectTransform targetRect = targetPanel.GetComponent<RectTransform>();
-            Vector2 targetPos = targetRect.anchoredPosition;
-            targetRect.anchoredPosition = new Vector2(targetPos.x, targetPos.y - panelMoveDistance);
+            // 设置动画起始位置
+            targetRect.anchoredPosition = new Vector2(originalTargetPos.x, originalTargetPos.y - panelMoveDistance);
 
             // 淡入新面板
             float fadeInTime = 0f;
@@ -393,16 +399,17 @@ namespace 小游戏.编钟游戏
                 float t = fadeInTime / panelFadeTime;
                 targetPanelGroup.alpha = Mathf.Lerp(0f, 1f, t);
                 targetRect.anchoredPosition = Vector2.Lerp(
-                    new Vector2(targetPos.x, targetPos.y - panelMoveDistance),
-                    targetPos,
+                    new Vector2(originalTargetPos.x, originalTargetPos.y - panelMoveDistance),
+                    originalTargetPos,
                     t
                 );
                 fadeInTime += Time.deltaTime;
                 yield return null;
             }
 
+            // 确保最终状态正确
             targetPanelGroup.alpha = 1f;
-            targetRect.anchoredPosition = targetPos;
+            targetRect.anchoredPosition = originalTargetPos;
 
             // 更新当前面板引用
             _currentPanel = targetPanel;
