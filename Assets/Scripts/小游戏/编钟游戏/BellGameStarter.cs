@@ -19,8 +19,10 @@ namespace 小游戏.编钟游戏
         [Tooltip("自动启动延迟（秒）")]
         public float autoStartDelay = 0.5f;
         
-        private void Start()
+        private void OnEnable()
         {
+            
+            print("BellGameStarter启动");
             // 确保初始状态
             if (gamePanel != null)
             {

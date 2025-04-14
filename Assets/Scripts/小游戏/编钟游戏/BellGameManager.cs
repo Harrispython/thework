@@ -53,6 +53,9 @@ namespace 小游戏.编钟游戏
 
         private void OnEnable()
         {
+            print("BellGameManager启动");
+            InitializeGame();
+            
             // 订阅事件
             GameEvents.OnBellHit += OnBellHit;
             GameEvents.OnGameStart += StartGame;
@@ -66,13 +69,13 @@ namespace 小游戏.编钟游戏
             GameEvents.OnGameStart -= StartGame;
             GameEvents.OnGameEnd -= HandleGameEnd;  // 改为使用新的处理方法
         }
-
+        
         /// <summary>
         /// 初始化
         /// </summary>
         private void Start()
         {
-            InitializeGame();
+           
         }
         
         private void InitializeGame()
@@ -217,14 +220,20 @@ namespace 小游戏.编钟游戏
         /// </summary>
         public void StartGame()
         {
+            
+            // 设置关卡为第一关（索引为0）
+            currentLevel = 0;
+    
+            // 重置游戏状态
+            ResetGameState();
             // 初始化挑战
             InitializeChallenge();
-            
             // // 延迟后播放乐句示范
             // StartCoroutine(DelayedAction(1f, () => {
             //     PlayMelody();
             // }));
         }
+        
         
         /// <summary>
         /// 播放乐句序列的协程
@@ -415,9 +424,7 @@ namespace 小游戏.编钟游戏
                 }
                 else
                 {
-                    resultMessage = "音高序列不正确。请比对您的顺序与示范顺序:\n示范: " + 
-                                   GetMelodyString(_currentMelody) + "\n您的: " + 
-                                   GetMelodyString(_playerInputs);
+                    resultMessage = "音高序列不正确。";
                 }
             }
             
@@ -575,10 +582,9 @@ namespace 小游戏.编钟游戏
             
             // 重置演奏次数显示
             UpdatePlayCountDisplay();
-            
             // 显示指引
             ShowInstruction($"第{currentLevel + 1}关: 请点击演奏按钮听取示范乐句。");
-            
+            //
             // 更新UI
             UpdateUI();
         }
@@ -588,18 +594,19 @@ namespace 小游戏.编钟游戏
         /// </summary>
         public void NextLevel()
         {
+           
             // 隐藏结果面板
             if (uiRefs.resultPanel != null)
             {
                 uiRefs.resultPanel.SetActive(false);
             }
             
-            // 增加关卡
-            currentLevel++;
-            
-            // 如果还有下一关，则继续
-            if (currentLevel < melodyDatas.Count)
-            {
+                    // 增加关卡
+                    currentLevel++;
+                    
+                    // 如果还有下一关，则继续
+                    if (currentLevel < melodyDatas.Count)
+                    {
                 // 显示游戏面板
                 if (uiRefs.gamePanel != null)
                 {
@@ -645,15 +652,14 @@ namespace 小游戏.编钟游戏
                 
                 // 重置演奏次数显示
                 UpdatePlayCountDisplay();
-                
                 // 更新UI
                 UpdateUI();
-            }
-            else
-            {
-                // 游戏通关
-                ShowInstruction("恭喜您完成了所有挑战！");
-                _isPlayerTurn = false;
+                    }
+                    else
+                    {
+                        // 游戏通关
+                        ShowInstruction("恭喜您完成了所有挑战！");
+                        _isPlayerTurn = false;
                 _isReadyToMimic = false;
                 DisableAllBellSounds();
                 
@@ -663,6 +669,10 @@ namespace 小游戏.编钟游戏
                 {
                     mainMenu.ReturnToMainMenu();
                 }
+            }
+            if (uiRefs.prepareButton != null)
+            {
+                uiRefs.prepareButton.interactable = false;
             }
         }
         
@@ -706,6 +716,7 @@ namespace 小游戏.编钟游戏
                 uiRefs.playButton.interactable = !_isListening && !_isReadyToMimic && _playCount < maxPlayCount;
                 uiRefs.prepareButton.interactable = !_isListening && !_isReadyToMimic;
                 uiRefs.confirmButton.interactable = _isReadyToMimic && _playerInputs.Count > 0;
+                
             }
             else
             {
