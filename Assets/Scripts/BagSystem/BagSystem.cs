@@ -86,6 +86,7 @@ public class BagSystem : MonoBehaviour
         {
             book.InsertPageData(book.CurrentLeftPageNumber, Items[TempInex].DescriptionMateral);
             book.InsertPageData(book.CurrentLeftPageNumber, Items[TempInex].ImageMateral);
+            PageList.instance.AcitveList(Items[TempInex].DescriptionMateral);
             Demo02.pageViews[0].gameObject.name = $"PageView_{book.LastPageNumber - 1}";
         }
         Items.RemoveAt(TempInex);

@@ -9,6 +9,8 @@ using echo17.EndlessBook;
 public class BookAnimator : MonoBehaviour
 {
     [SerializeField]
+    private bool _isfirst=true;
+    [SerializeField]
     private Animator _animator;
     [SerializeField]
     private Image _character;
@@ -18,8 +20,6 @@ public class BookAnimator : MonoBehaviour
     private List<Sprite> _characterList;
     [SerializeField]
     private List<string> _nameList;
-    [SerializeField]
-    private EndlessBook _book;
     [SerializeField]
     private BookEnum _bookEnum;
     public TextMeshProUGUI Description;
@@ -58,10 +58,10 @@ public class BookAnimator : MonoBehaviour
         set { _nameList = value; }
     }
 
-    public EndlessBook Book
+    public bool IsFirst
     {
-        get { return _book; }
-        set { _book = value; }
+        get { return _isfirst; }
+        set { _isfirst = value; }
     }
 
     public BookEnum BookEnum
@@ -70,7 +70,11 @@ public class BookAnimator : MonoBehaviour
         set { _bookEnum = value; }
     }
 
-
+    public void SetIsFirst()
+    {
+        IsFirst = false;
+        Debug.Log($"First is{IsFirst}");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -86,12 +90,12 @@ public class BookAnimator : MonoBehaviour
 
     private void OnEnable()
     {
-        if (Description && Text != null)
-        {
-            StartTyping();
-        }
+        //if (Description && Text != null)
+        //{
+        //    StartTyping();
+        //}
 
-        if (_animator)
+        if (_animator&& IsFirst)
         {
             _animator.SetTrigger("Active");
         }
@@ -119,10 +123,19 @@ public class BookAnimator : MonoBehaviour
 
     public void Active(Material TempMateral)
     {
-        if (TempMateral == Material)
+        if (Description)
         {
-            StartTyping();
+            if (TempMateral == Material)
+            {
+                StartTyping();
+            }
         }
+        else
+        {
+            Debug.Log("Description is null");
+        }
+
+
     }
 
     public void StartTyping()
@@ -137,7 +150,7 @@ public class BookAnimator : MonoBehaviour
         foreach (char letter in Text)
         {
             Description.text += letter;
-            yield return new WaitForSeconds(0.05f); // 每个字之间的间隔时间（可调）
+            yield return new WaitForSeconds(0.02f); // 每个字之间的间隔时间（可调）
         }
     }
 }
