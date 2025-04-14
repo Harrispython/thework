@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 namespace 小游戏.编钟游戏
 {
@@ -662,7 +663,7 @@ namespace 小游戏.编钟游戏
                         _isPlayerTurn = false;
                 _isReadyToMimic = false;
                 DisableAllBellSounds();
-                
+
                 // 返回主菜单
                 BellGameMainMenu mainMenu = GetComponent<BellGameMainMenu>();
                 if (mainMenu != null)
@@ -784,15 +785,16 @@ namespace 小游戏.编钟游戏
                     }
                     InitializeMainMenuPanel();
                 }
-                
+
                 // 直接调用BellGameMainMenu的处理方法
+
                 BellGameMainMenu mainMenu = GetComponent<BellGameMainMenu>();
                 if (mainMenu != null)
                 {
                     // 不要调用ReturnToMainMenu，因为它会触发事件
                     mainMenu.InitializeMainMenuPanel();
                 }
-                
+
                 // 触发返回主菜单事件而不是游戏结束事件
                 GameEvents.TriggerReturnToMainMenu();
             }
@@ -948,15 +950,15 @@ namespace 小游戏.编钟游戏
                 uiRefs.backgroundBackButton.onClick.RemoveListener(ExitGame);
                 uiRefs.backgroundBackButton.onClick.AddListener(ExitGame);
             }
-            
+
             // 更新背景文本内容
-            BellGameMainMenu mainMenu = GetComponent<BellGameMainMenu>();
-            if (mainMenu != null && uiRefs.backgroundText != null)
+            BellGameMainMenu mainmenu = this.GetComponent<BellGameMainMenu>();
+            if (mainmenu != null && uiRefs.backgroundText != null)
             {
-                uiRefs.backgroundText.text = mainMenu.GetBackgroundIntroduction();
+                uiRefs.backgroundText.text = mainmenu.GetBackgroundIntroduction();
             }
         }
-        
+
         /// <summary>
         /// 重置游戏状态
         /// </summary>
