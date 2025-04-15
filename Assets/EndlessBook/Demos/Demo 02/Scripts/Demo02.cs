@@ -373,7 +373,7 @@
         /// <param name="page">The page that was hit</param>
         /// <param name="hitPointNormalized">The normalized hit point on the page</param>
         /// <param name="dragging">Whether we were dragging</param>
-        protected virtual void TouchPadTouchUpDetected(TouchPad.PageEnum page, Vector2 hitPointNormalized, bool dragging)
+        public virtual void TouchPadTouchUpDetected(TouchPad.PageEnum page, Vector2 hitPointNormalized, bool dragging)
         {
             switch (book.CurrentState)
             {
