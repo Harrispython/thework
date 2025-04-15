@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,11 +20,11 @@ namespace 小游戏.编钟游戏
         [TextArea(5, 10)]
         public string bellIntroduction = "编钟是中国古代的打击乐器，起源于西周，盛行于春秋战国时期。它由大小不同的青铜钟按照音调高低悬挂在一个巨大的钟架上，演奏时用木槌敲击发声。\n\n曾侯乙编钟是中国出土的规模最大、保存最好的一套青铜编钟，1978年在湖北随县（今随州市）出土，共65件，音域跨越5个八度，可演奏复杂的乐曲。\n\n编钟具有'一钟双音'的特性，每个钟的正面和侧面敲击会发出不同的音调，这在世界乐器史上极为罕见。";
         
-        [TextArea(5, 10)]
-        public string musicScaleIntroduction = "宫商角徵羽是中国古代五声音阶的名称，相当于现代简谱的1、2、3、5、6。\n\n宫(gōng)：相当于简谱的1音\n商(shāng)：相当于简谱的2音\n角(jué)：相当于简谱的3音\n徵(zhǐ)：相当于简谱的5音\n羽(yǔ)：相当于简谱的6音\n\n这种五声音阶是中国传统音乐的基础，形成于先秦时期，至今仍然广泛应用于中国民族音乐中。";
-        
-        [TextArea(5, 10)]
-        public string physicsIntroduction = "编钟的制作体现了古代中国人对声学原理的深刻理解：\n\n1. 钟体形状：编钟呈扁平的梯形，而非圆形，这种特殊设计使得钟的正面和侧面敲击会产生不同的谐振频率，形成一钟双音。\n\n2. 厚度控制：编钟壁的厚度经过精确计算和控制，以产生特定的音高。\n\n3. 悬挂方式：编钟悬挂时采用特定角度，这影响了钟的振动方式和发声特性。\n\n4. 合金比例：青铜合金的成分比例直接影响音色，古人通过经验掌握了最佳配比。";
+        // [TextArea(5, 10)]
+        // public string musicScaleIntroduction = "宫商角徵羽是中国古代五声音阶的名称，相当于现代简谱的1、2、3、5、6。\n\n宫(gōng)：相当于简谱的1音\n商(shāng)：相当于简谱的2音\n角(jué)：相当于简谱的3音\n徵(zhǐ)：相当于简谱的5音\n羽(yǔ)：相当于简谱的6音\n\n这种五声音阶是中国传统音乐的基础，形成于先秦时期，至今仍然广泛应用于中国民族音乐中。";
+        //
+        // [TextArea(5, 10)]
+        // public string physicsIntroduction = "编钟的制作体现了古代中国人对声学原理的深刻理解：\n\n1. 钟体形状：编钟呈扁平的梯形，而非圆形，这种特殊设计使得钟的正面和侧面敲击会产生不同的谐振频率，形成一钟双音。\n\n2. 厚度控制：编钟壁的厚度经过精确计算和控制，以产生特定的音高。\n\n3. 悬挂方式：编钟悬挂时采用特定角度，这影响了钟的振动方式和发声特性。\n\n4. 合金比例：青铜合金的成分比例直接影响音色，古人通过经验掌握了最佳配比。";
 
         [Header("音效管理")]
         [SerializeField] private AudioManager audioManager;
@@ -63,6 +64,11 @@ namespace 小游戏.编钟游戏
 
         private void Start()
         {
+            
+        }
+
+        public void gameStart()
+        {
             // 初始化光标
             if (cursorManager != null)
             {
@@ -71,6 +77,7 @@ namespace 小游戏.编钟游戏
             
             // 触发游戏开始事件
             GameEvents.TriggerGameStart();
+            // ReturnToMainMenu();
         }
 
         private void InitializePanelCanvasGroups()
@@ -117,6 +124,8 @@ namespace 小游戏.编钟游戏
 
         private void OnEnable()
         {
+            gameStart();
+            print("BellGameMainMenu启动");
             RegisterButtonEvents();
         }
 
@@ -249,7 +258,8 @@ namespace 小游戏.编钟游戏
         /// </summary>
         public string GetBackgroundIntroduction()
         {
-            return $"<b>【编钟介绍】</b>\n{bellIntroduction}\n\n<b>【宫商角徵羽介绍】</b>\n{musicScaleIntroduction}\n\n<b>【古代物理知识介绍】</b>\n{physicsIntroduction}";
+            return $"<b>【编钟介绍】</b>\n{bellIntroduction}";
+                // \n\n<b>【宫商角徵羽介绍】</b>\n{musicScaleIntroduction}\n\n<b>【古代物理知识介绍】</b>\n{physicsIntroduction}
         }
 
         public void ReturnToMainMenu()
@@ -323,20 +333,13 @@ namespace 小游戏.编钟游戏
             }
             
             // 隐藏所有面板
-            if (uiRefs.mainMenuPanel != null) uiRefs.mainMenuPanel.SetActive(false);
+            if (uiRefs.mainMenuPanel != null) uiRefs.mainMenuPanel.SetActive(true);
             if (uiRefs.gamePanel != null) uiRefs.gamePanel.SetActive(false);
             if (uiRefs.freePlayPanel != null) uiRefs.freePlayPanel.SetActive(false);
             if (uiRefs.backgroundPanel != null) uiRefs.backgroundPanel.SetActive(false);
             if (uiRefs.resultPanel != null) uiRefs.resultPanel.SetActive(false);
             
-            // 触发游戏结束事件
-            GameEvents.TriggerGameEnd();
             
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #else
-            Application.Quit();
-            #endif
         }
 
         private IEnumerator SwitchPanelCoroutine(GameObject targetPanel)

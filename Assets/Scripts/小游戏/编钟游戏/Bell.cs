@@ -25,14 +25,14 @@ namespace 小游戏.编钟游戏
         // 添加声音开关控制
         [Header("交互控制")]
         [Tooltip("是否允许发出声音")]
-        public bool allowSound = true;
+        public bool allowSound = false;
         
         private AudioSource _audioSource;
         private Animator _animator;
 
         public event Action<int> OnBellHit; // 编钟敲击事件
         
-        private void Awake()
+        private void OnEnable()
         {
             // 获取或添加AudioSource组件
             _audioSource = GetComponent<AudioSource>();
@@ -50,7 +50,12 @@ namespace 小游戏.编钟游戏
                 hitEffect.SetActive(false);
             }
         }
-        
+
+        private void OnDisable()
+        {
+            Destroy(_audioSource);
+        }
+
         private void OnMouseDown()
         {
             // 无论是否允许声音，始终触发敲击事件，但只在允许时播放声音
