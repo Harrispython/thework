@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PageBackground_04_mask0:
-        m_Texture: {fileID: 2800000, guid: 30c3a9268743af842b9bc55d6e6a89d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2ef4014d081d14547a38a4988436cfc3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

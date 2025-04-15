@@ -1,10 +1,13 @@
 using UnityEngine;
 using echo17.EndlessBook;
+using echo17.EndlessBook.Demo02;
 
 public class PageTurnHandler : MonoBehaviour
 {
     public EndlessBook endlessBook;
-
+    public Demo02 demo02;
+    public GameObject pageView_05;
+    public GameObject pageView_06;
     void Start()
     {
         // 确保EndlessBook组件已分配
@@ -68,5 +71,9 @@ public class PageTurnHandler : MonoBehaviour
                 onPageTurnStart: OnPageTurnStart,
                 onPageTurnEnd: OnPageTurnEnd);
         }
+    }
+    public void TrunFor()
+    {
+        demo02.TouchPadTouchUpDetected(TouchPad.PageEnum.Right, new Vector2(0, 0), false);
     }
 } 
