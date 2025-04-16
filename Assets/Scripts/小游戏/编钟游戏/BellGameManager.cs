@@ -78,7 +78,11 @@ namespace 小游戏.编钟游戏
         {
            
         }
-        
+
+        public void Set_canPlayBellSound(bool value)
+        {
+            _canPlayBellSound = value;
+        }
         private void InitializeGame()
         {
             // 注册编钟事件
@@ -747,11 +751,11 @@ namespace 小游戏.编钟游戏
         /// <summary>
         /// 退出游戏（实际是返回主菜单）
         /// </summary>
-        private void ExitGame()
+        public void ExitGame()
         {
             if (_isExiting) return;  // 防止循环调用
             _isExiting = true;
-
+            _canPlayBellSound=false;
             try
             {
                 // 触发游戏结束事件（先解除订阅以防循环调用）
@@ -765,12 +769,13 @@ namespace 小游戏.编钟游戏
                 
                 // 重置游戏状态
                 ResetGameState();
+                DisableAllBellSounds();
                 
-                // 隐藏游戏面板
-                if (uiRefs.gamePanel != null)
-                {
-                    uiRefs.gamePanel.SetActive(false);
-                }
+                // 确保其他面板隐藏
+                if (uiRefs.gamePanel != null) uiRefs.gamePanel.SetActive(false);
+                if (uiRefs.freePlayPanel != null) uiRefs.freePlayPanel.SetActive(false);
+                if (uiRefs.backgroundPanel != null) uiRefs.backgroundPanel.SetActive(false);
+                if (uiRefs.resultPanel != null) uiRefs.resultPanel.SetActive(false);
 
                 // 显示并激活主菜单面板
                 if (uiRefs.mainMenuPanel != null) 
@@ -892,6 +897,11 @@ namespace 小游戏.编钟游戏
             _isPlayerTurn = true;
             _isListening = false;
             
+            // 启用所有编钟
+            foreach (var bell in bells)
+            {
+                bell.gameObject.SetActive(true);
+            }
             // 启用所有编钟声音
             EnableAllBellSounds();
             
@@ -909,11 +919,7 @@ namespace 小游戏.编钟游戏
                 uiRefs.freePlayBackButton.onClick.AddListener(ExitGame);
             }
             
-            // 启用所有编钟
-            foreach (var bell in bells)
-            {
-                bell.gameObject.SetActive(true);
-            }
+            
         }
         
         /// <summary>
@@ -1016,7 +1022,7 @@ namespace 小游戏.编钟游戏
         /// <summary>
         /// 启用所有编钟声音
         /// </summary>
-        private void EnableAllBellSounds()
+        public void EnableAllBellSounds()
         {
             foreach (var bell in bells)
             {
@@ -1027,8 +1033,9 @@ namespace 小游戏.编钟游戏
         /// <summary>
         /// 禁用所有编钟声音
         /// </summary>
-        private void DisableAllBellSounds()
+        public void DisableAllBellSounds()
         {
+            
             foreach (var bell in bells)
             {
                 bell.SetSoundEnabled(false);

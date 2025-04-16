@@ -46,6 +46,16 @@ namespace 小游戏.编钟游戏
             _gameManager = GetComponent<BellGameManager>();
             _uiManager = GetComponent<BellGameUIManager>();
             
+            
+        }
+
+        private void Start()
+        {
+            
+        }
+
+        public void gameStart()
+        {
             // 获取光标管理器
             if (cursorManager == null)
             {
@@ -60,15 +70,7 @@ namespace 小游戏.编钟游戏
             CheckUIPanelTags();
             RegisterButtonEvents();
             SetInitialState();
-        }
-
-        private void Start()
-        {
             
-        }
-
-        public void gameStart()
-        {
             // 初始化光标
             if (cursorManager != null)
             {
@@ -262,66 +264,70 @@ namespace 小游戏.编钟游戏
                 // \n\n<b>【宫商角徵羽介绍】</b>\n{musicScaleIntroduction}\n\n<b>【古代物理知识介绍】</b>\n{physicsIntroduction}
         }
 
-        public void ReturnToMainMenu()
+        public void  ReturnToMainMenu()
         {
-            // 先取消事件订阅以避免循环调用
-            bool isAlreadyReturning = false;
-            
-            try
-            {
-                if (isAlreadyReturning) return;
-                isAlreadyReturning = true;
-                
+            // // 先取消事件订阅以避免循环调用
+            // bool isAlreadyReturning = false;
+            //
+            // try
+            // {
+            //     if (isAlreadyReturning) return;
+            //     isAlreadyReturning = true;
+            //     
                 // 重置游戏状态
                 if (_gameManager != null)
                 {
-                    _gameManager.ResetGameState();
+                    _gameManager.ExitGame();
+                    
                 }
                 
-                // 确保其他面板隐藏
-                if (uiRefs.gamePanel != null) uiRefs.gamePanel.SetActive(false);
-                if (uiRefs.freePlayPanel != null) uiRefs.freePlayPanel.SetActive(false);
-                if (uiRefs.backgroundPanel != null) uiRefs.backgroundPanel.SetActive(false);
-                if (uiRefs.resultPanel != null) uiRefs.resultPanel.SetActive(false);
+                
+            //     // 确保其他面板隐藏
+            //     if (uiRefs.gamePanel != null) uiRefs.gamePanel.SetActive(false);
+            //     if (uiRefs.freePlayPanel != null) uiRefs.freePlayPanel.SetActive(false);
+            //     if (uiRefs.backgroundPanel != null) uiRefs.backgroundPanel.SetActive(false);
+            //     if (uiRefs.resultPanel != null) uiRefs.resultPanel.SetActive(false);
+            //
+            //     _gameManager.Set_canPlayBellSound(false);
+            //     // 显示主菜单面板
+            //     if (uiRefs.mainMenuPanel != null)
+            //     {
+            //         // 显示主菜单并初始化
+            //         uiRefs.mainMenuPanel.SetActive(true);
+            //         
+            //         // 确保CanvasGroup是可见的
+            //         CanvasGroup canvasGroup = uiRefs.mainMenuPanel.GetComponent<CanvasGroup>();
+            //         if (canvasGroup != null)
+            //         {
+            //             canvasGroup.alpha = 1f;
+            //             canvasGroup.blocksRaycasts = true;
+            //             canvasGroup.interactable = true;
+            //         }
+            //         
+            //         // 初始化按钮
+            //         InitializeMainMenuPanel();
+            //     }
+            //     
+            //     // 播放返回音效
+            //     if (audioManager != null)
+            //     {
+            //         audioManager.PlayPanelSwitchSound();
+            //     }
+            //     
+            //     // 确保光标仍然是自定义光标
+            //     if (cursorManager != null)
+            //     {
+            //         cursorManager.SetGameCursor();
+            //     }
+            //     
+            //     // 触发返回主菜单事件
+            //     GameEvents.TriggerReturnToMainMenu();
+            // }
+            // finally
+            // {
+            //     isAlreadyReturning = false;
+            // }
 
-                // 显示主菜单面板
-                if (uiRefs.mainMenuPanel != null)
-                {
-                    // 显示主菜单并初始化
-                    uiRefs.mainMenuPanel.SetActive(true);
-                    
-                    // 确保CanvasGroup是可见的
-                    CanvasGroup canvasGroup = uiRefs.mainMenuPanel.GetComponent<CanvasGroup>();
-                    if (canvasGroup != null)
-                    {
-                        canvasGroup.alpha = 1f;
-                        canvasGroup.blocksRaycasts = true;
-                        canvasGroup.interactable = true;
-                    }
-                    
-                    // 初始化按钮
-                    InitializeMainMenuPanel();
-                }
-                
-                // 播放返回音效
-                if (audioManager != null)
-                {
-                    audioManager.PlayPanelSwitchSound();
-                }
-                
-                // 确保光标仍然是自定义光标
-                if (cursorManager != null)
-                {
-                    cursorManager.SetGameCursor();
-                }
-                
-                // 触发返回主菜单事件
-                GameEvents.TriggerReturnToMainMenu();
-            }
-            finally
-            {
-                isAlreadyReturning = false;
-            }
         }
 
         private void ExitGame()

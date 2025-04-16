@@ -114,7 +114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 2.785, y: 5.438, z: 12.547}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.11798096, y: 1.7820129}
+  m_AnchoredPosition: {x: -0.11798096, y: 1.7819824}
   m_SizeDelta: {x: 9.95, y: 9.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5423304783236084089
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1.07
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4724095706882555957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,14 +326,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9968553, b: 0.9968553, a: 0.85490197}
+  m_Color: {r: 0.98742133, g: 0.7380313, b: 0.03415597, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0bcbc47084123f1459b41a04135ce873, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46102412add6c3c4d99cda08fd81bd19, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -116,6 +116,7 @@ namespace 小游戏.编钟游戏
         /// <param name="enable">是否允许发出声音</param>
         public void SetSoundEnabled(bool enable)
         {
+            
             allowSound = enable;
         }
     }

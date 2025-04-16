@@ -117,10 +117,10 @@ public class Npc : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canChart)
         {
+            print("E");
             Flowchart flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
             if (flowchart.HasBlock(NpcName))
             {
-                canChart = false;
                 flowchart.ExecuteBlock(NpcName); // 播放对话
             }
             
