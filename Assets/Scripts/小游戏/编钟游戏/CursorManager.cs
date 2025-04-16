@@ -30,6 +30,14 @@ namespace 小游戏.编钟游戏
 
         private void Awake()
         {
+            
+            
+           
+        }
+        
+        private void OnEnable()
+        {
+            _isAnimating = false;
             // 存储原始光标
             _originalCursor = null;  // Unity没有直接获取当前光标的API
             
@@ -39,10 +47,6 @@ namespace 小游戏.编钟游戏
             
             // 添加返回主菜单的事件监听 - 返回主菜单时不改变光标
             GameEvents.OnReturnToMainMenu += HandleReturnToMainMenu;
-        }
-        
-        private void OnEnable()
-        {
             // 初始化光标
             SetGameCursor();
         }
@@ -126,6 +130,7 @@ namespace 小游戏.编钟游戏
         /// </summary>
         private IEnumerator ClickAnimationCoroutine()
         {
+            
             _isAnimating = true;
             
             // 显示点击光标

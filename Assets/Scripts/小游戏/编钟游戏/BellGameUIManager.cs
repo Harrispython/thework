@@ -28,6 +28,8 @@ namespace 小游戏.编钟游戏
 
         private void OnEnable()
         {
+            InitializeAudioSource();
+            InitializeUI();
             // 订阅事件
             GameEvents.OnShowResult += HandleShowResult;
             GameEvents.OnHideAllPanels += HideAllPanels;
@@ -44,8 +46,7 @@ namespace 小游戏.编钟游戏
         
         private void Awake()
         {
-            InitializeAudioSource();
-            InitializeUI();
+            
         }
 
         private void InitializeAudioSource()
